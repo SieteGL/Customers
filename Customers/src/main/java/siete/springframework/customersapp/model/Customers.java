@@ -9,23 +9,11 @@ import javax.persistence.Table;
 @Table(name = "customers")
 public class Customers {
 
-    public Customers() {
-    }
-
     //Constructor with parameters
-    public Customers(Long id, String firstName, String lastName, String city, String address, int phone) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
-        this.address = address;
-        this.phone = phone;
-    }
 
     @Id
     @Column
-    private Long id;
-
+    private String id;
     @Column
     private String firstName;
 
@@ -41,12 +29,26 @@ public class Customers {
     @Column
     private int phone;
 
+    public Customers() {
+    }
+
+    public Customers(String id, String firstName, String lastName, String city, String address, int phone) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.address = address;
+        this.phone = phone;
+    }
+
     //Getters & Setters
-    public Long getId() {
+
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
